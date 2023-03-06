@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package gits;
+option go_package="test3/transport/grpc/gitspb";
+
+service Gits {
+  rpc BookGet (BookGetRequest) returns (BookGetResponse) {}
+  rpc BookAdd (BookAddRequest) returns (BookAddResponse) {}
+  rpc BookUpdate (BookUpdateRequest) returns (BookUpdateResponse) {}
+  rpc BookDelete (BookDeleteRequest) returns (BookDeleteResponse) {}
+
+  rpc AuthorGet (AuthorGetRequest) returns (AuthorGetResponse) {}
+  rpc AuthorAdd (AuthorAddRequest) returns (AuthorAddResponse) {}
+  rpc AuthorUpdate (AuthorUpdateRequest) returns (AuthorUpdateResponse) {}
+  rpc AuthorDelete (AuthorDeleteRequest) returns (AuthorDeleteResponse) {}
+
+  rpc PublisherGet (PublisherGetRequest) returns (PublisherGetResponse) {}
+  rpc PublisherAdd (PublisherAddRequest) returns (PublisherAddResponse) {}
+  rpc PublisherUpdate (PublisherUpdateRequest) returns (PublisherUpdateResponse) {}
+  rpc PublisherDelete (PublisherDeleteRequest) returns (PublisherDeleteResponse) {}
+}
+
+message BookGetRequest {
+  string bookId = 1;
+}
+
+message BookAddRequest {
+  Book book = 1;
+}
+
+message BookUpdateRequest {
+  Book book = 1;
+  string bookId = 2;
+}
+
+message BookDeleteRequest {
+  string bookId = 1;
+}
+
+message BookGetResponse {
+  Book book = 1;
+}
+
+message BookAddResponse {
+  Book book = 1;
+}
+
+message BookUpdateResponse {
+  bool result = 1;
+}
+
+message BookDeleteResponse {
+  bool result = 1;
+}
+
+message Book {
+  string bookId = 1;
+  string name = 2;
+  string authorId = 3;
+  string publisherId = 4;
+}
+
+message AuthorGetRequest {
+  string authorId = 1;
+}
+
+message AuthorAddRequest {
+  Author author = 1;
+}
+
+message AuthorUpdateRequest {
+  Author author = 1;
+  string authorId = 2;
+}
+
+message AuthorDeleteRequest {
+  string authorId = 1;
+}
+
+message AuthorGetResponse {
+  Author author = 1;
+}
+
+message AuthorAddResponse {
+  Author author = 1;
+}
+
+message AuthorUpdateResponse {
+  bool result = 1;
+}
+
+message AuthorDeleteResponse {
+  bool result = 1;
+}
+
+message Author {
+  string authorId = 1;
+  string name = 2;
+}
+
+message PublisherGetRequest {
+  string publisherId = 1;
+}
+
+message PublisherAddRequest {
+  Publisher publisher = 1;
+}
+
+message PublisherUpdateRequest {
+  Publisher publisher = 1;
+  string publisherId = 2;
+}
+
+message PublisherDeleteRequest {
+  string publisherId = 1;
+}
+
+message PublisherGetResponse {
+  Publisher publisher = 1;
+}
+
+message PublisherAddResponse {
+  Publisher publisher = 1;
+}
+
+message PublisherUpdateResponse {
+  bool result = 1;
+}
+
+message PublisherDeleteResponse {
+  bool result = 1;
+}
+
+message Publisher {
+  string publisherId = 1;
+  string name = 2;
+}

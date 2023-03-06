@@ -1,0 +1,16 @@
+CREATE TABLE books (
+	id VARCHAR (255) PRIMARY KEY,
+	name VARCHAR ( 50 ) NOT NULL,
+	author_id VARCHAR ( 50 ) NOT NULL,
+	publisher_id VARCHAR ( 50 ) NOT NULL
+);
+
+CREATE TABLE authors (
+	id VARCHAR (255) PRIMARY KEY,
+	name VARCHAR ( 50 ) NOT NULL
+);
+
+CREATE TABLE publishers (
+	id VARCHAR (255) PRIMARY KEY,
+	name VARCHAR ( 50 ) NOT NULL
+);
